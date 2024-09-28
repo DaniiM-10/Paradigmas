@@ -1,0 +1,108 @@
+# Caches de paquetes
+**/packages/
+!**/packages/build/
+!**/packages/repositories.config
+
+# Logs
+*.log
+*.nlog
+*.out
+*.err
+
+# Archivos generados por el sistema
+bin/
+obj/
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+*.db
+*.cache
+*.ide
+
+# Archivos de depuración y optimización
+*.csproj.user
+*.csproj.EntityFrameworkCore.targets
+*.csproj.nuget.g.targets
+*.csproj.nuget.targets
+*.mdb
+
+# Configuraciones específicas del usuario
+.vscode/
+.vs/
+.idea/
+*.swp
+*.suo
+*.userosscache
+*.userprefs
+
+# Archivos de publicación
+*.publishsettings
+*.pubxml
+*.pubxml.user
+
+# Configuraciones locales de IDE y herramientas
+/.vs/
+.vscode/
+.idea/
+
+# Archivos de bases de datos
+*.mdf
+*.ldf
+*.ndf
+*.db
+
+# Archivos de configuración sensibles
+appsettings*.json
+
+# Archivos de entorno de desarrollo
+.env
+
+# Carpetas de dependencias
+node_modules/
+wwwroot/lib/
+wwwroot/dist/
+
+# Archivos y carpetas de compilación
+project.nuget.cache
+bin/
+obj/
+
+# Configuraciones locales del IDE y el proyecto
+launchSettings.json
+
+# Configuraciones del entorno local
+appsettings.Development.json
+
+# Archivos de publicación
+*.publishsettings
+*.pubxml
+*.pubxml.user
+
+# Logs y cache
+*.log
+*.cache
+*.swp
+
+# Archivos temporales de sistema
+Thumbs.db
+Desktop.ini
+
+# Paquetes NuGet
+*.nupkg
+project.nuget.cache
+*.snupkg
+
+# Otros archivos generados automáticamente
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.cache
+*.ide
+
+# Dependencias Node (si las tienes para el front-end)
+node_modules/
+wwwroot/lib/
+wwwroot/dist/
