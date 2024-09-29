@@ -1,4 +1,6 @@
 # Paradigmas
+
+## TP4:
 ### 3)- Teniendo en cuenta la clase CuentaObjeto que permite registrar la cantidad de objetos creados y objetos destruidos:
 - **a)** Analice el programa de prueba y el código de implementación de la clase CuentaObjeto disponible en el Aula Virtual.
 - **b)** Ejecute el programa de prueba y analice la información que presenta el método mostrarResumen() en cada una de las invocaciones e identifique en el código el momento en que se crean y destruyen los objetos.
