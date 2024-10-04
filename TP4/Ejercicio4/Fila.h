@@ -1,9 +1,9 @@
 /*
- * Fila.h
- *
- *  Created on: 26 sept 2024
- *      Author: Danii
- */
+* Fila.h
+*
+* Created on: 26 sept 2024
+* Author: Danii
+*/
 
 #ifndef FILA_H_
 #define FILA_H_
@@ -16,8 +16,8 @@ class Fila {
 		int longitud;
 	public:
 		Fila();
+		Fila(const Fila &fila);
 		~Fila();
-		void FilaVacia();
 		bool EsFilaVacia();
 		item Frente();
 		void Enfila(item dato);

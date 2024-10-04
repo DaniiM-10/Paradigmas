@@ -1,9 +1,9 @@
 /*
- * Nodo.cpp
- *
- *  Created on: 28 sept 2024
- *      Author: Danii
- */
+* Nodo.cpp
+*
+* Created on: 28 sept 2024
+* Author: Danii
+*/
 #include "Nodo.h"
 
 Nodo::Nodo(item _dato)
