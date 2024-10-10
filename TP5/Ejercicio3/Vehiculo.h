@@ -1,9 +1,9 @@
 /*
- * Vehiculo.h
- *
- *  Created on: 8 oct 2024
- *      Author: Danii
- */
+* Vehiculo.h
+*
+* Created on: 8 oct 2024
+* Author: Danii
+*/
 
 #ifndef VEHICULO_H_
 #define VEHICULO_H_
@@ -19,13 +19,13 @@ class Vehiculo {
 		double pesoMax;
 		const float INCREMENTO = 0.25; // 25%
 		double tarifa;
+		bool pesoExcedido(double peso);
+		double calcularIncremento(double peso);
 	public:
-		Vehiculo();
+		Vehiculo(string, int, double, double);
 		~Vehiculo();
 		void escribirInfo();
-		bool pesoExcedido();
-		double calcularIncremento(/*double peso*/);
-		double calcularPrecioViaje(/*double peso*/);
+		double calcularPrecioViaje(double peso);
 		// Getters
 		double getTarifa();
 };
