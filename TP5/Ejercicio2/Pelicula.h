@@ -29,6 +29,7 @@ class Pelicula {
         Pelicula(); // Constr. por defecto
         Pelicula(string _titulo, float _precioBase, TipoPelicula _tipoPelicula, string _nombreDirector, int _edadDirector, short _dia, short _mes, short _anio); // Constr. con parametros
         Pelicula(const Pelicula &co); // Constr. copia
+        void getBiografiaDirector();
         void listarInformacion();
         bool esEstreno();
         ~Pelicula();

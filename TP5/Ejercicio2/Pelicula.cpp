@@ -1,9 +1,9 @@
 /*
- * Pelicula.cpp
- *
- *  Created on: 26 sept 2024
- *      Author: Danii
- */
+* Pelicula.cpp
+*
+* Created on: 26 sept 2024
+* Author: Danii
+*/
 #include "Pelicula.h"
 
 int Pelicula::autonumerico = 0;
@@ -30,7 +30,7 @@ Pelicula::~Pelicula(){
 void Pelicula::listarInformacion() {
 	cout << "Codigo: " << this->codigo << endl;
 	cout << "Titulo: " << this->titulo << endl;
-	this->director.biografia(); //???
+	this->getBiografiaDirector();
 	cout << "Fecha de Estreno: " << this->estreno.getDia() << "/" << this->estreno.getMes() << "/" << this->estreno.getAnio() << endl;
 	cout << "Precio: $" << this->calcularCosto() << endl;
 	cout << "Tipo de Pelicula: " << (this->tipoPelicula == TipoPelicula::N ? "Normal" : "Independiente") << endl;
@@ -39,9 +39,9 @@ void Pelicula::listarInformacion() {
 bool Pelicula::esEstreno() {
 	Fecha* fechaActual = new Fecha();
 
-	return (fechaActual->getAnio() - this->estreno.getAnio()) > 1
-			? false // No es estreno
-			: true;
+	return (*fechaActual - this->estreno) > 1
+		? false // No es estreno
+		: true;
 };
 
 float Pelicula::calcularCosto() {
@@ -53,4 +53,8 @@ float Pelicula::calcularCosto() {
 		if(this->esEstreno() == false) costo *= 0.8;
 	}
 	return costo;
+};
+
+void Pelicula::getBiografiaDirector() {
+	this->director.biografia();
 };
