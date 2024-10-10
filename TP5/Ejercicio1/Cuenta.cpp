@@ -35,4 +35,3 @@ double Cuenta::getSaldo() { return this->saldo; }
 void Cuenta::mostrarInformacion() {
 	cout << this->dniTitular << " - " << this->numero << " - " << this->saldo << endl;
 }
-

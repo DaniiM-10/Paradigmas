@@ -18,6 +18,7 @@ Pila::Pila(int dim){
 	tope=-1;
 	arreglo = reservarMemoria(MAX);
 }
+
 /*void Pila ::push(item item){ // Caso de Agregacion
 	if(tope+1 tope++;
 		arreglo[tope] = item;
@@ -66,4 +67,5 @@ Pila::~Pila(){
 	for (int i = tope; i >= 0; i--) {
 		delete arreglo[i];
 	}
+	delete []arreglo;
 }
