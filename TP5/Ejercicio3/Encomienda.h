@@ -7,10 +7,12 @@
 
 #ifndef ENCOMIENDA_H_
 #define ENCOMIENDA_H_
+
 #include <iostream>
 #include <string>
 #include "Fecha.h"
 #include "Vehiculo.h"
+
 using namespace std;
 
 class Encomienda {
@@ -19,23 +21,27 @@ class Encomienda {
 		int codigoEncomienda;
 		string dirOrigen;
 		string dirDestino;
-		Fecha fechaIngreso;
+		Fecha* fechaIngreso;
 		Fecha fechaEntrega;
 		bool entregado;
 		double pesoEncomienda;
 		Vehiculo vehiculo;
+
 	public:
-		Encomienda(int, string, string, int diaI, int mesI, int anioI, int diaE, int mesE, int anioE, bool, double, Vehiculo);
+		Encomienda(string _dirOrigen, string _dirDestino, Fecha* fecha, double _pesoEncomienda, Vehiculo _vehiculo);  // Cambiado a puntero
 		~Encomienda();
+
 		void escribirInfo();
 		double calcularPrecioEncomienda();
+
 		// Setters
 		void setFechaEntrega(Fecha fecha);
+
 		// Getters
 		Fecha getFechaEntrega();
 		int getCodigo();
 		double getPeso();
-
 };
 
 #endif /* ENCOMIENDA_H_ */
+

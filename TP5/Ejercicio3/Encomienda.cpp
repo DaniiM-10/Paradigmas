@@ -8,25 +8,39 @@
 
 int Encomienda::autonumerico = 0;
 
-Encomienda::Encomienda(int _codigoEncomienda, string _dirOrigen, string _dirDestino, int _diaI, int _mesI, int _anioI, int _diaE, int _mesE, int _anioE, bool _entregado, double _pesoEncomienda, Vehiculo _vehiculo)
-	:codigoEncomienda(++autonumerico), dirOrigen(_dirOrigen), dirDestino(_dirDestino), fechaIngreso(_diaI, _mesI, _anioI), fechaEntrega(_diaE, _mesE, _anioE), entregado(_entregado), pesoEncomienda(_pesoEncomienda), vehiculo(_vehiculo){};
+Encomienda::Encomienda(string _dirOrigen, string _dirDestino, Fecha* fecha, double _pesoEncomienda, Vehiculo _vehiculo)  // Cambiado a puntero
+    : codigoEncomienda(++autonumerico), dirOrigen(_dirOrigen), dirDestino(_dirDestino), fechaIngreso(fecha), entregado(false), pesoEncomienda(_pesoEncomienda), vehiculo(_vehiculo) {}
 
-Encomienda::~Encomienda(){};
+Encomienda::~Encomienda() {}
 
 void Encomienda::escribirInfo() {
-	cout << "" << this->codigoEncomienda << endl;
-	cout << "" << this->dirDestino << endl;
-	cout << "" << this->dirOrigen << endl;
-	cout << "" << (this->entregado ? "Si" : "No") << endl;
-	cout << "" << this->pesoEncomienda << endl;
-};
+    cout << "Código: " << this->codigoEncomienda << endl;
+    cout << "Destino: " << this->dirDestino << endl;
+    cout << "Origen: " << this->dirOrigen << endl;
+    cout << "Entregado: " << (this->entregado ? "Sí" : "No") << endl;
+    cout << "Peso: " << this->pesoEncomienda << endl;
+    cout << "=================================" << endl;
+}
 
 void Encomienda::setFechaEntrega(Fecha fecha) {
+    this->fechaEntrega = fecha;
+    this->entregado = true;
+}
 
-};
+Fecha Encomienda::getFechaEntrega() {
+    return this->fechaEntrega;
+}
 
-Fecha Encomienda::getFechaEntrega() { return this->fechaEntrega; };
+int Encomienda::getCodigo() {
+    return this->codigoEncomienda;
+}
+
+double Encomienda::getPeso() {
+    return this->pesoEncomienda;
+}
 
 double Encomienda::calcularPrecioEncomienda() {
-	double peso = this->getPeso();
-};
+	double precio = this->vehiculo.calcularPrecioViaje(this->pesoEncomienda);
+	return precio;
+}
+
