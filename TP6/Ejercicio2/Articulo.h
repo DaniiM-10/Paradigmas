@@ -8,6 +8,7 @@
 #ifndef ARTICULO_H_
 #define ARTICULO_H_
 #include <iostream>
+#include "Fecha.h"
 using namespace std;
 
 class Articulo {

@@ -17,11 +17,14 @@ class Libro : public Articulo {
 		string nombreAutor;
 		bool bestSeller;
 		const static double DESCUENTO;
-		bool esBestSeller();
 	public:
 		Libro(int, string, int, double, string, string, bool);
 		void mostrarInfo();
 		float precioVenta();
+
+		// Getter
+		bool getBestSeller();
+
 		~Libro();
 };
 

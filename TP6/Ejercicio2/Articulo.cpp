@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const double IVA = 1.21;
+const double Articulo::IVA = 1.21;
 
 Articulo::Articulo(int _codigo, string _titulo, int _anioEdicion, double _precioBase)
 	: codigo(_codigo), titulo(_titulo), anioEdicion(_anioEdicion), precioBase(_precioBase) {}

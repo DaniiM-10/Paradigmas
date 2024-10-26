@@ -18,13 +18,19 @@ Libro::Libro(int _codigo, string _titulo, int _anioEdicion, double _precioBase, 
 	this->bestSeller = _bestSeller;
 }
 
-bool Libro::esBestSeller() {
-}
+bool Libro::getBestSeller() { return this->bestSeller; }
 
 void Libro::mostrarInfo() {
+	Articulo::mostrarInfo();
+	cout << "Nombre Editorial: " << this->nombreEditorial << endl;
+	cout << "Nombre Autor: " << this->nombreAutor << endl;
+	cout << "Best Seller: " << ((this->bestSeller) ? "Si" : "No") << endl;
 }
 
 float Libro::precioVenta() {
+	return (this->getBestSeller())
+				? (this->precioBase * this->DESCUENTO * this->IVA)
+				: (this->precioBase * this->IVA);
 }
 
 Libro::~Libro() {

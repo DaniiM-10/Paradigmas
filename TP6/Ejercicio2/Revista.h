@@ -18,7 +18,7 @@ class Revista : public Articulo {
 		string campoTem;
 		const static double DESCUENTO;
 	public:
-		Revista();
+		Revista(int, string, int, double, int, int, string);
 		void mostrarInfo();
 		float precioVenta();
 		int antiguedad();
