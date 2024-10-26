@@ -50,4 +50,3 @@ bool Sistema::compararFechas(Fecha fecha1, Fecha fecha2) {
     }
     return false;
 }
-

@@ -44,4 +44,3 @@ class Encomienda {
 };
 
 #endif /* ENCOMIENDA_H_ */
-

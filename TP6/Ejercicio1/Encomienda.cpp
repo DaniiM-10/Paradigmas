@@ -43,4 +43,3 @@ double Encomienda::calcularPrecioEncomienda() {
 	double precio = this->vehiculo->calcularPrecioViaje(this->pesoEncomienda);
 	return precio;
 }
-
