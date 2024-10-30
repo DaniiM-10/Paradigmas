@@ -6,32 +6,51 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
+//============================================================================
+// Name        : TP6_Ejercicio1.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
 #include <iostream>
 #include "Sistema.h"
-#include "Encomienda.h"
-
+#include "Fecha.h"
+#include "Auto.h"
 #include "Moto.h"
 
 using namespace std;
 
 int main() {
-    // Crear instancia del sistema
+    // Crear el sistema
     Sistema sistema;
 
     // Crear vehículos
-    Moto moto("AAA111", 2020, 1000, 50);
+    Auto* auto1 = new Auto("ABC123", 2020, 1500, 500, 100);
+    Moto* moto1 = new Moto("XYZ789", 2022, 250, 600);
 
     // Registrar encomiendas
-    sistema.registrarEncomienda("Origen 1", "Destino 1", 500, &moto);
+    cout << "Registrando encomiendas..." << endl;
+    sistema.registrarEncomienda("Calle Falsa 123", "Calle Verdadera 456", 120, auto1);
+    sistema.registrarEncomienda("Av Siempre Viva 742", "Calle Falsa 123", 50, moto1);
 
-    // Crear fecha de entrega
-    Fecha fechaEntrega(12, 10, 2024);
+    // Visualizar información de encomiendas registradas
+    cout << "\nInformación de encomiendas registradas:" << endl;
+    Fecha fechaEntrega1(26, 10, 2024);
+    Fecha fechaEntrega2(27, 10, 2024);
 
-    // Cargar fecha de entrega a una encomienda
-    sistema.cargarFechaEntrega(1, fechaEntrega); // Asumimos que el código de la encomienda es 1
+    sistema.cargarFechaEntrega(1, fechaEntrega1);
+    sistema.cargarFechaEntrega(2, fechaEntrega2);
 
-    // Listar entregas para una fecha específica
-    sistema.listarEntregas(fechaEntrega);
+    // Listar entregas por una fecha específica
+    cout << "\nListando entregas para la fecha 26/10/2024:" << endl;
+    Fecha fechaConsulta(26, 10, 2024);
+    sistema.listarEntregas(fechaConsulta);
+
+    // Liberar memoria
+    delete auto1;
+    delete moto1;
 
     return 0;
 }
