@@ -6,14 +6,6 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-//============================================================================
-// Name        : TP6_Ejercicio1.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
 #include <iostream>
 #include "Sistema.h"
 #include "Fecha.h"
