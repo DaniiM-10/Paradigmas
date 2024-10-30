@@ -8,6 +8,7 @@
 #ifndef ALIMENTO_H_
 #define ALIMENTO_H_
 #include "Producto.h"
+#include "Fecha.h"
 
 class Alimento : public Producto {
 	private:
@@ -15,7 +16,7 @@ class Alimento : public Producto {
 		bool aptoCeliacos;
 		static const float SUBSIDIO;
 	public:
-		Alimento(string, float, int, int, int, bool);
+		Alimento(string, float, Fecha, bool);
 
 		void listarInfo();
 		bool estaVencido();

@@ -9,6 +9,8 @@
 #define ALMACEN_H_
 #include <vector>
 #include "Producto.h"
+#include "Alimento.h"
+#include "Limpieza.h"
 #include "Venta.h"
 
 class Almacen {
@@ -19,10 +21,13 @@ class Almacen {
 	public:
 		Almacen(string);
 
-		void ventasDelMes(int mes, int anio);
-		// cargar productos y ventas
+		float ventasDelMes(Fecha);
+		void crearProducto(string, float, Fecha, bool);
+		void crearProducto(string, float, bool);
+		void crearVenta(int);
 
-		virtual ~Almacen();
+
+		~Almacen();
 };
 
 #endif /* ALMACEN_H_ */

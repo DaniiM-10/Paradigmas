@@ -26,6 +26,7 @@ class Producto {
 
 		// Getters
 		int getCodigo();
+		string getDescripcion();
 		float getPrecioBase();
 
 		virtual ~Producto();

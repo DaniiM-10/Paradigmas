@@ -20,6 +20,8 @@ void Producto::listarInfo() {
 
 int Producto::getCodigo() { return this->codigo; }
 
+string Producto::getDescripcion() { return this->descripcion; }
+
 float Producto::getPrecioBase() { return this->precioBase; }
 
 Producto::~Producto() {

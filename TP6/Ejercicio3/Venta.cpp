@@ -9,8 +9,11 @@
 
 int Venta::autonumerico = 0;
 
-Venta::Venta()
-	:codigo(++autonumerico) { this->fechaVenta = new Fecha(); }
+Venta::Venta(Producto* _producto)
+	:codigo(++autonumerico) {
+	this->fechaVenta = new Fecha();
+	this->productosVenta.push_back(_producto);
+}
 
 void Venta::listarInfoVenta() {
 	for(auto venta : this->productosVenta) {

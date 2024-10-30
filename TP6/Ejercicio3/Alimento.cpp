@@ -9,9 +9,9 @@
 
 const float Alimento::SUBSIDIO = 1.105;
 
-Alimento::Alimento(string _descripcion, float _precioBase, int _dia, int _mes, int _anio, bool _aptoCeliacos)
+Alimento::Alimento(string _descripcion, float _precioBase, Fecha _fechaVencimiento, bool _aptoCeliacos)
 	: Producto(_descripcion, _precioBase) {
-	this->fechaVencimiento = new Fecha(_dia, _mes, _anio);
+	this->fechaVencimiento = new Fecha(_fechaVencimiento);
 	this->aptoCeliacos = _aptoCeliacos;
 }
 

@@ -15,9 +15,9 @@ class Venta {
 		static int autonumerico;
 		int codigo;
 		Fecha* fechaVenta;
-		vector<Producto*> productosVenta;
+		vector<Producto*> productoVenta;
 	public:
-		Venta();
+		Venta(Producto*);
 
 		void listarInfoVenta();
 		float montoTotal();
