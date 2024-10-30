@@ -20,7 +20,7 @@ class Venta {
 		Fecha* fechaVenta;
 		vector<Articulo*> articulosVenta;
 	public:
-		Venta();
+		Venta(Articulo*);
 		void listarInfo();
 		double montoTotal();
 

@@ -11,9 +11,10 @@ using namespace std;
 
 int Venta::autonumerico = 0;
 
-Venta::Venta()
+Venta::Venta(Articulo* _articulo)
 	: codigo(++autonumerico){
 	this->fechaVenta = new Fecha();
+	this->articulosVenta.push_back(_articulo);
 }
 
 void Venta::listarInfo() {

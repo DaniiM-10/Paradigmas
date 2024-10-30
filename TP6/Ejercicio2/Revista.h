@@ -8,6 +8,7 @@
 #ifndef REVISTA_H_
 #define REVISTA_H_
 #include <iostream>
+#include "Fecha.h"
 #include "Articulo.h"
 using namespace std;
 

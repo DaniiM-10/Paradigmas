@@ -9,6 +9,8 @@
 
 using namespace std;
 
+const double Revista::DESCUENTO = 0.15;
+
 Revista::Revista(int _codigo, string _titulo, int _anioEdicion, double _precioBase, int _numero, int _volumen, string _campoTem)
 	: Articulo(_codigo, _titulo, _anioEdicion, _precioBase){
 	this->numero = _numero;
@@ -30,7 +32,7 @@ float Revista::precioVenta() {
 }
 
 int Revista::antiguedad() {
-	Fecha* fecha_actual = new Fecha;
+	Fecha* fecha_actual = new Fecha();
 	return (fecha_actual->getAnio() - this->anioEdicion);
 }
 

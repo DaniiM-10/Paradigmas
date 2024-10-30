@@ -10,6 +10,7 @@
 #include <iostream>
 #include <vector>
 #include "Articulo.h"
+#include "Fecha.h"
 #include "Libro.h"
 #include "Revista.h"
 #include "Venta.h"
@@ -29,7 +30,7 @@ class Libreria {
 		void crearArticulo(int, string, int, double, string, string, bool); // Para Libro
 		void crearArticulo(int, string, int, double, int, int, string); // Para Revista
 
-		void crearVenta();
+		void crearVenta(int);
 
 		~Libreria();
 };

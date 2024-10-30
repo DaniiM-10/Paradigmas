@@ -42,8 +42,16 @@ void Libreria::crearArticulo(int codigo, string titulo, int anioEdicion, double 
 	this->articulosLibreria.push_back(nuevaRevista);
 }
 
-void Libreria::crearVenta() {
-
+void Libreria::crearVenta(int codigoArt) {
+	bool codigoValidacion = false;
+	for(auto articulo : this->articulosLibreria) {
+		if(codigoArt == articulo->getCodigo()) {
+			Venta* nuevaVenta = new Venta(articulo);
+			this->ventas.push_back(nuevaVenta);
+			codigoValidacion = true;
+		}
+	}
+	if(!codigoValidacion) { cout << "Articulo no encontrado :("; }
 }
 
 Libreria::~Libreria() {
