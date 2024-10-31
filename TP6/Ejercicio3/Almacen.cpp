@@ -10,11 +10,11 @@
 Almacen::Almacen(string _nombre)
 	: nombre(_nombre) {}
 
-float Almacen::ventasDelMes(Fecha fecha) {
+float Almacen::ventasDelMes(Fecha* fecha) {
 	float montoTotal = 0;
 	for(auto venta : this->ventas) {
-		if(venta->fechaVenta->getAnio() == fecha.getAnio()) {
-			if(venta->fechaVenta->getMes() == fecha.getMes()) {
+		if(venta->getFecha()->getAnio() == fecha->getAnio()) {
+			if(venta->getFecha()->getMes() == fecha->getMes()) {
 				montoTotal += venta->montoTotal();
 			}
 		}
@@ -39,6 +39,15 @@ void Almacen::crearVenta(int idProducto) {
 		}
 	}
 	if(!codigoValidacion) { cout << "Producto no encontrado :("; }
+}
+
+void Almacen::listarVentas() {
+    cout << "\nLista de Ventas Realizadas:\n" << endl;
+    for (auto venta : this->ventas) {
+        venta->listarInfoVenta();
+        cout << "Monto Total de la Venta: $" << venta->montoTotal() << endl;
+        cout << endl;
+    }
 }
 
 Almacen::~Almacen() {

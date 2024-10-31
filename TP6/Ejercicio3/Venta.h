@@ -22,7 +22,10 @@ class Venta {
 		void listarInfoVenta();
 		float montoTotal();
 
-		virtual ~Venta();
+		// Getters
+		Fecha* getFecha();
+
+		~Venta();
 };
 
 #endif /* VENTA_H_ */

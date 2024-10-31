@@ -12,24 +12,25 @@ int Venta::autonumerico = 0;
 Venta::Venta(Producto* _producto)
 	:codigo(++autonumerico) {
 	this->fechaVenta = new Fecha();
-	this->productosVenta.push_back(_producto);
+	this->productoVenta.push_back(_producto);
 }
 
 void Venta::listarInfoVenta() {
-	for(auto venta : this->productosVenta) {
+	for(auto venta : this->productoVenta) {
 		cout << "- Venta " << this->codigo << endl;
 		venta->listarInfo();
-		cout << endl;
 	}
 }
 
 float Venta::montoTotal() {
 	float montoTotal = 0;
-	for(auto venta : this->productosVenta) {
+	for(auto venta : this->productoVenta) {
 		montoTotal += venta->precioVenta();
 	}
 	return montoTotal;
 }
+
+Fecha* Venta::getFecha() { return this->fechaVenta; }
 
 Venta::~Venta() {
 	// TODO Auto-generated destructor stub

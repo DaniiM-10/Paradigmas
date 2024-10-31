@@ -15,7 +15,7 @@ Producto::Producto(string _descripcion, float _precioBase)
 void Producto::listarInfo() {
 	cout << "Codigo: " << this->codigo << endl;
 	cout << "Descripcion: " << this->descripcion << endl;
-	cout << "Precio Base: " << this->precioBase << endl;
+	cout << "Precio Base: $" << this->precioBase << endl;
 }
 
 int Producto::getCodigo() { return this->codigo; }

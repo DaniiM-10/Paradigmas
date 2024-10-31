@@ -21,11 +21,11 @@ class Almacen {
 	public:
 		Almacen(string);
 
-		float ventasDelMes(Fecha);
+		float ventasDelMes(Fecha*);
 		void crearProducto(string, float, Fecha, bool);
 		void crearProducto(string, float, bool);
 		void crearVenta(int);
-
+		void listarVentas();
 
 		~Almacen();
 };
