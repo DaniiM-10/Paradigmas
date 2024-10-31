@@ -21,9 +21,6 @@ void Pedido::listarInfoArticulos() {
 	}
 }
 
-void Pedido::agregarArticulo() {
-}
-
 float Pedido::precioPedido() {
 	float montoTotal = 0;
 	for(auto articulo : this->articulos) {
@@ -35,6 +32,8 @@ float Pedido::precioPedido() {
 int Pedido::getCodigo() { return this->codigo; }
 
 Fecha* Pedido::getFechaPedido() { return this->fechaPedido; }
+
+void Pedido::setArticulo(Articulo* articulo) { this->articulos.push_back(articulo); }
 
 Pedido::~Pedido() {
 	// TODO Auto-generated destructor stub

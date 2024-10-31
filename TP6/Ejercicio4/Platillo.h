@@ -19,7 +19,7 @@ class Platillo : public Articulo {
 		Platillo(string, float, string);
 
 		void listarInfo();
-		void agregarIngredienteExtra();
+		void agregarIngredienteExtra(Ingrediente*);
 		float precioVenta();
 
 		~Platillo();

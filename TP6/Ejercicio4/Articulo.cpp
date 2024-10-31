@@ -19,6 +19,8 @@ void Articulo::listarInfo() {
 
 int Articulo::getCodigo() { return this->codigo; }
 
+string Articulo::getDescripcion() { return this->descripcion; }
+
 float Articulo::getPrecioBase() { return this->precioBase; }
 
 Articulo::~Articulo() {

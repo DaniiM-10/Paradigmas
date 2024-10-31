@@ -22,12 +22,14 @@ class Pedido {
 		Pedido();
 
 		void listarInfoArticulos();
-		void agregarArticulo();
 		float precioPedido();
 
 		// Getters
 		int getCodigo();
 		Fecha* getFechaPedido();
+
+		// Setters
+		void setArticulo(Articulo* articulo);
 
 		~Pedido();
 };

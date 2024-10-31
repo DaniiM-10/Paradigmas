@@ -15,9 +15,7 @@ void Platillo::listarInfo() {
 	Articulo::listarInfo();
 }
 
-void Platillo::agregarIngredienteExtra() {
-
-}
+void Platillo::agregarIngredienteExtra(Ingrediente* ingredienteExt) { this->ingredientesExtra.push_back(ingredienteExt); }
 
 float Platillo::precioVenta() {
 	float precioFinal = 0;
