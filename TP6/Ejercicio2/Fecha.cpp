@@ -125,5 +125,11 @@ bool operator<(Fecha fecha1, Fecha fecha2){
 					if(fecha1.getDia() > fecha2.getDia())
 						valor= false;
 	return valor;
+}
 
+// Sobrecarga del operador ==
+bool operator==(Fecha fecha1, Fecha fecha2) {
+    return (fecha1.getAnio() == fecha2.getAnio() &&
+            fecha1.getMes() == fecha2.getMes() &&
+            fecha1.getDia() == fecha2.getDia());
 }

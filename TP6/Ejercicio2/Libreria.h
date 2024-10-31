@@ -27,8 +27,8 @@ class Libreria {
 		double recaudaciones(int mes, int anio);
 
 		// Sobrecarga de metodos
-		void crearArticulo(int, string, int, double, string, string, bool); // Para Libro
-		void crearArticulo(int, string, int, double, int, int, string); // Para Revista
+		void crearArticulo(string, int, double, string, string, bool); // Para Libro
+		void crearArticulo(string, int, double, int, int, string); // Para Revista
 
 		void crearVenta(int);
 

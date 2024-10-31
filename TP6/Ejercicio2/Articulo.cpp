@@ -10,9 +10,10 @@
 using namespace std;
 
 const double Articulo::IVA = 1.21;
+int Articulo::autonumerico = 0;
 
-Articulo::Articulo(int _codigo, string _titulo, int _anioEdicion, double _precioBase)
-	: codigo(_codigo), titulo(_titulo), anioEdicion(_anioEdicion), precioBase(_precioBase) {}
+Articulo::Articulo(string _titulo, int _anioEdicion, double _precioBase)
+	: codigo(++autonumerico), titulo(_titulo), anioEdicion(_anioEdicion), precioBase(_precioBase) {}
 
 void Articulo::mostrarInfo() {
 	cout << "Codigo: " << this->getCodigo() << endl;
@@ -21,7 +22,7 @@ void Articulo::mostrarInfo() {
 	cout << "Precio Base: " << this->precioBase << endl;
 }
 
-int Articulo::getCodigo() { return this->precioBase; }
+int Articulo::getCodigo() { return this->codigo; }
 
 Articulo::~Articulo() {
 	// TODO Auto-generated destructor stub

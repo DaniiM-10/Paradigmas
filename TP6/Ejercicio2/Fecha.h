@@ -42,5 +42,8 @@ int operator-(Fecha fecha1, Fecha fecha2) ;
 //externa de la clase Fecha
 bool operator<(Fecha fecha1, Fecha fecha2);
 
+// Sobrecarga del operador == como función externa de la clase Fecha
+bool operator==(Fecha fecha1, Fecha fecha2);
+
 
 #endif /* FECHA_H_ */

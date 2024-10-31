@@ -18,7 +18,7 @@ class Libro : public Articulo {
 		bool bestSeller;
 		const static double DESCUENTO;
 	public:
-		Libro(int, string, int, double, string, string, bool);
+		Libro(string, int, double, string, string, bool);
 		void mostrarInfo();
 		float precioVenta();
 
