@@ -17,7 +17,7 @@ class Venta {
 	private:
 		static int autonumerico;
 		int codigo;
-		Fecha* fechaVenta;
+		Fecha fechaVenta;
 		vector<Articulo*> articulosVenta;
 	public:
 		Venta(Articulo*);

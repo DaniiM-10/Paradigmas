@@ -23,7 +23,7 @@ class Libreria {
 		vector<Venta*> ventas;
 	public:
 		Libreria(string);
-		void listarInfoVentas(Fecha* fecha);
+		void listarInfoVentas(Fecha fecha);
 		double recaudaciones(int mes, int anio);
 
 		// Sobrecarga de metodos

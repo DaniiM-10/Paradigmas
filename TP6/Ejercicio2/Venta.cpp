@@ -13,7 +13,7 @@ int Venta::autonumerico = 0;
 
 Venta::Venta(Articulo* _articulo)
 	: codigo(++autonumerico){
-	this->fechaVenta = new Fecha();
+	this->fechaVenta = Fecha();
 	this->articulosVenta.push_back(_articulo);
 }
 

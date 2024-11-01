@@ -12,9 +12,7 @@ using namespace std;
 Libreria::Libreria(string _nombre)
 	: nombre(_nombre) {}
 
-void Libreria::listarInfoVentas(Fecha* fecha) {
-	Fecha n1 = Fecha();
-	Fecha n2 = Fecha();
+void Libreria::listarInfoVentas(Fecha fecha) {
 	for(auto venta : this->ventas) {
 		if(fecha == venta->getFecha()){
 			cout << "- Venta " << venta->getCodigo() << endl;
