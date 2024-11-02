@@ -25,8 +25,8 @@ void Libreria::listarInfoVentas(Fecha fecha) {
 double Libreria::recaudaciones(int mes, int anio) {
 	double montoTotal = 0;
 	for(auto venta : this->ventas) {
-		Fecha* fechaVenta = venta->getFecha();
-		if(fechaVenta->getMes() == mes && fechaVenta->getAnio() == anio) {
+		Fecha fechaVenta = venta->getFecha();
+		if(fechaVenta.getMes() == mes && fechaVenta.getAnio() == anio) {
 			montoTotal += venta->montoTotal();
 		}
 	}

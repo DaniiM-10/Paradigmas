@@ -25,7 +25,7 @@ class Venta {
 		double montoTotal();
 
 		// Getter
-		Fecha* getFecha();
+		Fecha getFecha();
 		int getCodigo();
 
 		// Setter

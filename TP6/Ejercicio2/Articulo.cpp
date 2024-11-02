@@ -19,7 +19,7 @@ void Articulo::mostrarInfo() {
 	cout << "Codigo: " << this->getCodigo() << endl;
 	cout << "Titulo: " << this->titulo << endl;
 	cout << "Anio de Edicion: " << this->anioEdicion << endl;
-	cout << "Precio Base: " << this->precioBase << endl;
+	cout << "Precio Base: $" << this->precioBase << endl;
 }
 
 int Articulo::getCodigo() { return this->codigo; }

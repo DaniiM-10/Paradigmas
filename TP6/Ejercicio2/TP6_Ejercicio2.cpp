@@ -31,17 +31,18 @@ int main() {
 
     // Intentar crear una venta con un código que no existe
     libreria.crearVenta(5); // Mensaje de "Artículo no encontrado :(" esperado
+    cout << endl;
 
     // Listar información de ventas en una fecha específica
-    Fecha* fechaActual = new Fecha(); // Fecha actual
-    cout << "\nVentas realizadas en la fecha: " << endl;
+    Fecha fechaActual; // Fecha actual
+    cout << "\nVentas realizadas en la fecha " << fechaActual.toString() << ":" << endl;
     libreria.listarInfoVentas(fechaActual);
 
     cout << "\nVentas realizadas el 10/2024: " << libreria.recaudaciones(10, 2024) << endl;
 
     // Mostrar recaudación en un mes y año específicos
-    int mes = fechaActual->getMes();
-    int anio = fechaActual->getAnio();
+    int mes = fechaActual.getMes();
+    int anio = fechaActual.getAnio();
     double recaudacion = libreria.recaudaciones(mes, anio);
     cout << "\nRecaudación para " << mes << "/" << anio << ": $" << recaudacion << endl;
 

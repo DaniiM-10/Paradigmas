@@ -32,7 +32,7 @@ float Revista::precioVenta() {
 }
 
 int Revista::antiguedad() {
-	Fecha fecha_actual = Fecha();
+	Fecha fecha_actual;
 	return (fecha_actual.getAnio() - this->anioEdicion);
 }
 
