@@ -19,13 +19,15 @@ class Restaurant {
 	public:
 		Restaurant(string);
 
-		float recaudacionDelDia(Fecha*);
+		float recaudacionDelDia(Fecha);
 		void crearArticulo(string, float, string);
 		void crearArticulo(string, float, int);
 		void crearPedido(int);
+		void agregarIngredienteExtra(Ingrediente*, int);
 
 		// Getters
 		string getNombre();
+		vector<Pedido*> getPedidos();
 
 		~Restaurant();
 };

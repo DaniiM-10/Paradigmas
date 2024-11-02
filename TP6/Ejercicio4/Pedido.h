@@ -9,6 +9,7 @@
 #define PEDIDO_H_
 #include <vector>
 #include "Articulo.h"
+#include "Platillo.h"
 #include "Fecha.h"
 using namespace std;
 
@@ -16,7 +17,7 @@ class Pedido {
 	private:
 		static int autonumerico;
 		int codigo;
-		Fecha* fechaPedido;
+		Fecha fechaPedido;
 		vector<Articulo*> articulos;
 	public:
 		Pedido();
@@ -26,7 +27,8 @@ class Pedido {
 
 		// Getters
 		int getCodigo();
-		Fecha* getFechaPedido();
+		Fecha getFechaPedido();
+		Platillo* getPlatillo();
 
 		// Setters
 		void setArticulo(Articulo* articulo);

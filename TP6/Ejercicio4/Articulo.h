@@ -21,6 +21,7 @@ class Articulo {
 
 		void listarInfo();
 		virtual float precioVenta() = 0;
+		virtual bool esPlatillo() = 0;
 
 		// Getters
 		int getCodigo();

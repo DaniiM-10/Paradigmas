@@ -7,6 +7,7 @@
 
 #include "Restaurant.h"
 #include "Fecha.h"
+#include <iostream>
 
 int main() {
     // Crear el restaurante
@@ -22,16 +23,14 @@ int main() {
     Ingrediente queso("Queso Mozzarella", 0.5);
     Ingrediente tomate("Rodajas de Tomate", 0.3);
 
-    // Añadir ingredientes extra a un platillo
-    Platillo* platilloPizza = dynamic_cast<Platillo*>(miRestaurante.getArticulos()[2]);
-    if (platilloPizza) {
-        platilloPizza->agregarIngredienteExtra(&queso);
-        platilloPizza->agregarIngredienteExtra(&tomate);
-    }
-
-    // Crear pedidos
-    miRestaurante.crearPedido(1); // Pedido con Coca Cola
+    // Añadir ingredientes extra a un platillo (por ejemplo, al pedido de Pizza Margarita)
     miRestaurante.crearPedido(3); // Pedido con Pizza Margarita
+    miRestaurante.agregarIngredienteExtra(&queso, 1); // Agregar queso al pedido
+    miRestaurante.agregarIngredienteExtra(&tomate, 1); // Agregar tomate al pedido
+
+    // Crear otros pedidos
+    miRestaurante.crearPedido(1); // Pedido con Coca Cola
+    miRestaurante.crearPedido(4); // Pedido con Hamburguesa Clásica
 
     // Crear una fecha para calcular la recaudación
     Fecha fechaHoy(2024, 10, 27);
@@ -43,8 +42,9 @@ int main() {
     }
 
     // Calcular y mostrar recaudación del día
-    float recaudacion = miRestaurante.recaudacionDelDia(&fechaHoy);
+    float recaudacion = miRestaurante.recaudacionDelDia(fechaHoy);
     cout << "\nRecaudación del día: $" << recaudacion << endl;
 
     return 0;
 }
+

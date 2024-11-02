@@ -10,14 +10,13 @@
 int Pedido::autonumerico = 0;
 
 Pedido::Pedido()
-	: codigo(++autonumerico){
-	this->fechaPedido = new Fecha();
-}
+	: codigo(++autonumerico) {}
 
 void Pedido::listarInfoArticulos() {
 	for(auto articulo : this->articulos) {
 		cout << "- Articulo: " << articulo->getCodigo() << endl;
 		articulo->listarInfo();
+		cout << "Precio pedido: $" << this->precioPedido() << endl;
 	}
 }
 
@@ -31,7 +30,9 @@ float Pedido::precioPedido() {
 
 int Pedido::getCodigo() { return this->codigo; }
 
-Fecha* Pedido::getFechaPedido() { return this->fechaPedido; }
+Fecha Pedido::getFechaPedido() { return this->fechaPedido; }
+
+Platillo* Pedido::getPlatillo() { return (this->articulos.size() > 0 && this->articulos[0]->esPlatillo()) ? static_cast<Platillo*>(this->articulos[0]) : nullptr; }
 
 void Pedido::setArticulo(Articulo* articulo) { this->articulos.push_back(articulo); }
 

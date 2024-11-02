@@ -17,6 +17,7 @@ class Bebida : public Articulo {
 
 		void listarInfo();
 		float precioVenta();
+		bool esPlatillo();
 
 		~Bebida();
 };

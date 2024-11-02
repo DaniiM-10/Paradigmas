@@ -21,6 +21,7 @@ class Platillo : public Articulo {
 		void listarInfo();
 		void agregarIngredienteExtra(Ingrediente*);
 		float precioVenta();
+		bool esPlatillo();
 
 		~Platillo();
 };

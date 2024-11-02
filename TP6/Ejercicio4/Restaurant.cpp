@@ -10,11 +10,11 @@
 Restaurant::Restaurant(string _nombre)
 	: nombre(_nombre) {}
 
-float Restaurant::recaudacionDelDia(Fecha* fecha) {
+float Restaurant::recaudacionDelDia(Fecha fecha) {
 	float recaudado = 0;
 	for(auto pedido : this->pedidos) {
 		pedido->listarInfoArticulos();
-		if(pedido->getFechaPedido()->getDia() == fecha->getDia()) {
+		if(pedido->getFechaPedido().getDia() == fecha.getDia()) {
 			recaudado += pedido->precioPedido();
 		}
 	}
@@ -28,6 +28,7 @@ void Restaurant::crearPedido(int codigo) {
 			Pedido* nuevoPedido = new Pedido();
 			nuevoPedido->setArticulo(articulo);
 			this->pedidos.push_back(nuevoPedido);
+			validarCodigo = true;
 		}
 	}
 	if(!validarCodigo) { cout << "Articulo no encontrado :(" << endl; }
@@ -44,6 +45,23 @@ void Restaurant::crearArticulo(string descripcion, float precioBase, int capacid
 	Bebida* nuevoArticulo = new Bebida(descripcion, precioBase, capacidad);
 	this->articulos.push_back(nuevoArticulo);
 }
+
+void Restaurant::agregarIngredienteExtra(Ingrediente* ingredienteExt, int codigoPedido) {
+	for(auto pedido : this->pedidos) {
+		if(pedido->getCodigo() == codigoPedido) {
+			if(pedido->getPlatillo()->esPlatillo()) {
+				pedido->getPlatillo()->agregarIngredienteExtra(ingredienteExt);
+			} else {
+				cout << "El pedido no es un platillo." << endl;
+			}
+		} else {
+			cout << "No se encontró el pedido con ese codigo." << endl;
+		}
+	}
+}
+
+vector<Pedido*> Restaurant::getPedidos() { return this->pedidos; }
+
 
 Restaurant::~Restaurant() {
 	// TODO Auto-generated destructor stub

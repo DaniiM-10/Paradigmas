@@ -15,7 +15,9 @@ void Platillo::listarInfo() {
 	Articulo::listarInfo();
 }
 
-void Platillo::agregarIngredienteExtra(Ingrediente* ingredienteExt) { this->ingredientesExtra.push_back(ingredienteExt); }
+void Platillo::agregarIngredienteExtra(Ingrediente* ingredienteExt) {
+    this->ingredientesExtra.push_back(ingredienteExt);
+}
 
 float Platillo::precioVenta() {
 	float precioFinal = 0;
@@ -24,6 +26,8 @@ float Platillo::precioVenta() {
 	}
 	return (precioFinal + Articulo::getPrecioBase());
 }
+
+bool Platillo::esPlatillo() { return true; }
 
 Platillo::~Platillo() {
 	// TODO Auto-generated destructor stub

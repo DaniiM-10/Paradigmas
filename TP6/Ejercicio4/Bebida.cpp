@@ -17,6 +17,8 @@ void Bebida::listarInfo() {
 
 float Bebida::precioVenta() { return Articulo::getPrecioBase(); }
 
+bool Bebida::esPlatillo() { return false; }
+
 Bebida::~Bebida() {
 	// TODO Auto-generated destructor stub
 }
