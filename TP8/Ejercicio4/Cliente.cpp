@@ -29,14 +29,9 @@ double Cliente::montoAbonadoEnMes(int mes, int anio) {
 	for(auto mascota : this->mascotas) {
 		monto_abonado += mascota->obtenerMontoTotalMes(mes, anio);
 	}
-	cout << "_ Mascotas con proximos controles:" << endl;
-	for(auto mascota : this->mascotas) {
-		if(mascota->tieneProxCtrol()) {
-			cout << "\t" << mascota->getNombre() << endl;
-		}
-	}
 	return monto_abonado;
 }
+
 
 double Cliente::montoTotalxMascota(int id_m, int mes, int anio) {
 	double monto_total = 0;
@@ -54,6 +49,17 @@ void Cliente::listarInforxMascota(int id_m) {
 		if(mascota->getIdM() == id_m) {
 			mascota->listarInfo();
 			break;
+		}
+	}
+}
+
+void Cliente::listarProximosCtroles() {
+	cout << "_ Mascotas con proximos controles:" << endl;
+	for(auto mascota : this->mascotas) {
+		if(mascota->tieneProxCtrol()) {
+			cout << "\t" << mascota->getNombre() << ": Tiene control" << endl;
+		} else {
+			cout << "\t" << mascota->getNombre() << ": No tiene proximos controles." << endl;
 		}
 	}
 }

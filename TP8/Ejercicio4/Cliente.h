@@ -24,6 +24,7 @@ class Cliente {
 		double montoAbonadoEnMes(int mes, int anio);
 		double montoTotalxMascota(int id_m, int mes, int anio);
 		void listarInforxMascota(int id_m);
+		void listarProximosCtroles();
 
 		// Getters
 		int getCodigo();

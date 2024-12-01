@@ -24,6 +24,7 @@ class Sucursal {
 		double montoAbonadoEnMes(int codigo, int mes, int anio);
 		double montoTotalxMascota(int codigo, int id_m, int mes, int anio);
 		void listarInforxMascota(int codigo, int id_m);
+		void listarProximosCtroles(int codigo);
 		void resumen(int mes, int anio);
 
 		virtual ~Sucursal();

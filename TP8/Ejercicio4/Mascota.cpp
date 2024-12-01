@@ -29,12 +29,12 @@ void Mascota::listarInfo() {
 		cout << "Fecha del Proximo Control: " << control->getFechaProximoCtrol() << endl;
 		cout << "Monto: " << control->getMonto() << endl;
 	}
-	cout << "Tiene proximo control: " << (tieneProxCtrol() ? "Sí." : "No.") << endl;
+	cout << "Tiene proximo control: " << (tieneProxCtrol() ? "Si." : "No.") << endl;
 }
 
 bool Mascota::tieneProxCtrol() {
 	bool tiene = false;
-	Fecha fecha_actual;
+	Fecha fecha_actual = Fecha();
 	for(auto control : this->controles) {
 		Fecha fecha_prox_ctrol = control->getFechaProximoCtrol();
 		long int dias_restantes = fecha_prox_ctrol - fecha_actual;

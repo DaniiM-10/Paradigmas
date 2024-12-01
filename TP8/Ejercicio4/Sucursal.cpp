@@ -7,7 +7,7 @@
 
 #include "Sucursal.h"
 
-int Mascota::autonumerico = 0;
+int Sucursal::autonumerico = 0;
 Sucursal::Sucursal(string _direccion) : codigo(++autonumerico), direccion(_direccion) {}
 
 void Sucursal::agregarCliente(Cliente* cliente) {
@@ -59,14 +59,24 @@ void Sucursal::listarInforxMascota(int codigo, int id_m) {
 	}
 }
 
+void Sucursal::listarProximosCtroles(int codigo) {
+	for(auto cliente : this->clientes) {
+		if(cliente->getCodigo() == codigo) {
+			cliente->listarProximosCtroles();
+			break;
+		}
+	}
+}
+
 void Sucursal::resumen(int mes, int anio) {
 	double monto_total = 0;
 	cout << "_ Resumen, recaudacion " << mes << "/" << anio << ":" << endl;
 	for(auto cliente : this->clientes) {
-		cout << "\t _ Codigo: " << cliente->getCodigo() << endl;
+		cout << "\t _ Codigo de Cliente: " << cliente->getCodigo() << endl;
 		double monto_abonado = cliente->montoAbonadoEnMes(mes, anio);
 		cout << "\t _ Monto abonado: $" << monto_abonado << endl;
 		monto_total += monto_abonado;
+		monto_abonado = 0;
 	}
 	cout << endl;
 	cout << "\t _Monto total recaudado: $" << monto_total << endl;
